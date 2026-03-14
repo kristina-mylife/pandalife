@@ -3,7 +3,11 @@ pages:
   script:
     - mkdir -p public
     - cp index.html manifest.json sw.js public/
-    - cp -r css js images icons public/
+    - cp -r css public/
+    - cp -r js public/
+    - cp -r images public/
+    - cp -r icons public/
+    - ls -la public/
   artifacts:
     paths:
       - public
