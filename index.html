@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#1a5f4a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PandaLife">
+  <title>PandaLife — Ходи и Прыгай</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="game-container">
+    <div id="menu-screen">
+      <h1>🐼 PandaLife</h1>
+      <p class="subtitle">Ходи, прыгай и ешь пельмени! Мир расширяется вправо.</p>
+      <div id="character-select">
+        <p class="char-label">Выбери персонажа:</p>
+        <div id="char-buttons">
+          <button id="char-giant" class="char-btn selected" data-char="giant">
+            <span class="char-emoji">🐼</span>
+            <span class="char-name">Большая панда</span>
+          </button>
+          <button id="char-red" class="char-btn" data-char="red">
+            <span class="char-emoji">🐻</span>
+            <span class="char-name">Красная панда</span>
+          </button>
+        </div>
+      </div>
+      <button id="play-btn" class="play-btn">Играть</button>
+      <div id="controls-hint">
+        <p><strong>Ходьба:</strong> ← → или A D</p>
+        <p><strong>Прыжок:</strong> ↑ W Пробел или тап по экрану</p>
+      </div>
+    </div>
+
+    <div id="game-screen" class="hidden">
+      <canvas id="game-canvas"></canvas>
+      <div id="hud">
+        <span id="score">🥟 0</span>
+        <span id="lives">❤️ 3</span>
+        <button id="back-btn">← Меню</button>
+      </div>
+      <div id="mobile-controls">
+        <button id="btn-left" class="mobile-btn">←</button>
+        <button id="btn-right" class="mobile-btn">→</button>
+        <button id="btn-jump" class="mobile-btn jump-btn">↑</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/game.js"></script>
+</body>
+</html>
