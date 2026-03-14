@@ -1,11 +1,6 @@
-image: busybox
-
-pages:
-  stage: deploy
+create-pages:
   script:
-    - echo "Deploying PandaLife to $CI_PAGES_URL"
-  artifacts:
-    paths:
-      - public
+    - echo "Deploying PandaLife to GitLab Pages"
+  pages: true
   rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_COMMIT_BRANCH == "main"
