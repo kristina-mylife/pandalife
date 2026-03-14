@@ -1,0 +1,18 @@
+{
+  "name": "PandaLife — Ходи и Прыгай",
+  "short_name": "PandaLife",
+  "description": "Игра с пандой: ходи по площадке, прыгай и собирай пельмени!",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a5f4a",
+  "theme_color": "#1a5f4a",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
