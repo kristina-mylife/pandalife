@@ -1,4 +1,5 @@
 pages:
+  image: alpine:latest
   stage: deploy
   script:
     - mkdir -p public
