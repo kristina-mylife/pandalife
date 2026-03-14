@@ -1,3 +1,6 @@
+stages:
+  - deploy
+
 pages:
   image: alpine:latest
   stage: deploy
@@ -12,5 +15,5 @@ pages:
   artifacts:
     paths:
       - public
-  only:
-    - main
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
