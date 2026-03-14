@@ -1,19 +1,11 @@
-stages:
-  - deploy
+image: busybox
 
 pages:
-  image: alpine:latest
   stage: deploy
   script:
-    - mkdir -p public
-    - cp index.html manifest.json sw.js public/
-    - cp -r css public/
-    - cp -r js public/
-    - cp -r images public/
-    - cp -r icons public/
-    - ls -la public/
+    - echo "Deploying to $CI_PAGES_URL"
   artifacts:
     paths:
       - public
   rules:
-    - if: $CI_COMMIT_BRANCH == "main"
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
