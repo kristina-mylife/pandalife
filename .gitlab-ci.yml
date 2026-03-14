@@ -1,19 +1,10 @@
-stages:
-  - deploy
-
-pages:
-  image: alpine:latest
-  stage: deploy
-  script:
-    - mkdir -p public
-    - cp index.html manifest.json sw.js public/
-    - cp -r css public/
-    - cp -r js public/
-    - cp -r images public/
-    - cp -r icons public/
-    - ls -la public/
-  artifacts:
-    paths:
-      - public
+# The Docker image that will be used to build your app
+image: alpine:latest
+create-pages:
+  pages:
+    # The folder that contains the files to be exposed at the Page URL
+    publish: public
   rules:
-    - if: $CI_COMMIT_BRANCH == "main"
+    # This ensures that only pushes to the default branch will trigger
+    # a pages deploy
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
