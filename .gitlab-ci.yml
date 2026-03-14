@@ -1,3 +1,6 @@
-test:
+create-pages:
   script:
-    - echo hello
+    - echo "Deploying PandaLife to GitLab Pages"
+  pages: true
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
