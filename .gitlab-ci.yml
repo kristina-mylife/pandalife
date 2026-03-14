@@ -3,7 +3,7 @@ image: busybox
 pages:
   stage: deploy
   script:
-    - echo "Deploying to $CI_PAGES_URL"
+    - echo "Deploying PandaLife to $CI_PAGES_URL"
   artifacts:
     paths:
       - public
