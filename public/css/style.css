@@ -150,7 +150,8 @@ body {
   display: block;
   width: 100%;
   max-width: 868px;
-  height: 480px;
+  height: auto;
+  aspect-ratio: 868 / 480;
   background: linear-gradient(180deg, #87ceeb 0%, #b8e6f0 40%, #90d4a0 70%, #6ab86a 100%);
   border-radius: 12px;
   image-rendering: pixelated;
@@ -251,5 +252,62 @@ body {
 @media (max-width: 768px) {
   #mobile-controls.visible {
     display: flex;
+  }
+}
+
+/* Landscape на мобильном: вписываем canvas по высоте экрана */
+@media (orientation: landscape) and (max-height: 550px) {
+  body {
+    align-items: flex-start;
+  }
+
+  #game-container {
+    border-radius: 12px;
+    width: 100%;
+  }
+
+  #game-screen {
+    padding: 4px 8px;
+  }
+
+  #game-canvas {
+    width: auto;
+    height: calc(100svh - 60px);
+    max-width: 100%;
+    aspect-ratio: 868 / 480;
+  }
+
+  #hud {
+    top: 8px;
+    left: 12px;
+    right: 12px;
+  }
+
+  #score, #lives {
+    font-size: 0.85rem;
+    padding: 4px 10px;
+  }
+
+  #back-btn {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+  }
+
+  #mobile-controls {
+    bottom: 6px;
+    gap: 10px;
+  }
+
+  .mobile-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+  }
+
+  .mobile-btn.jump-btn {
+    width: 56px;
+    height: 56px;
+    font-size: 1.5rem;
+    margin-left: 12px;
   }
 }
