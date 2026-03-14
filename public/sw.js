@@ -1,15 +1,16 @@
-const CACHE = 'pandalife-v1';
+const CACHE = 'pandalife-v2';
+const BASE = '/pandalife/';
 
 self.addEventListener('install', (e) => {
   e.waitUntil(
     caches.open(CACHE).then((cache) =>
       cache.addAll([
-        './',
-        './index.html',
-        './css/style.css',
-        './js/game.js',
-        './manifest.json',
-        './icons/icon.svg'
+        BASE,
+        BASE + 'index.html',
+        BASE + 'css/style.css',
+        BASE + 'js/game.js',
+        BASE + 'manifest.json',
+        BASE + 'icons/icon.svg'
       ]).catch(() => {})
     )
   );
@@ -26,7 +27,6 @@ self.addEventListener('activate', (e) => {
 });
 
 self.addEventListener('fetch', (e) => {
-  if (e.request.mode !== 'navigate' && !e.request.url.match(/\.(css|js|json|svg)$/)) return;
   e.respondWith(
     caches.match(e.request).then((r) => r || fetch(e.request))
   );
